@@ -1,3 +1,4 @@
+```js
 require("dotenv").config();
 
 const { App } = require("@slack/bolt");
@@ -34,7 +35,10 @@ app.command("/rayyans-slackbot-help", async ({ ack, respond }) => {
 `Available Commands:
 /rayyans-slackbot-ping - Check bot latency
 /rayyans-slackbot-catfact - Get a cat fact
-/rayyans-slackbot-joke - Get a random joke`
+/rayyans-slackbot-joke - Get a random joke
+/rayyans-slackbot-coinflip - Flip a coin
+/rayyans-slackbot-8ball - Ask the magic 8-ball
+/rayyans-slackbot-roll - Roll a number from 1-100`
   });
 });
 
@@ -93,7 +97,54 @@ ${response.data.punchline}`
   }
 });
 
+app.command("/rayyans-slackbot-coinflip", async ({ ack, respond }) => {
+  console.log("COINFLIP received");
+
+  await ack();
+
+  const result = Math.random() < 0.5 ? "Heads" : "Tails";
+
+  await respond({
+    text: `🪙 ${result}!`
+  });
+});
+
+app.command("/rayyans-slackbot-8ball", async ({ ack, respond }) => {
+  console.log("8BALL received");
+
+  await ack();
+
+  const answers = [
+    "Yes.",
+    "No.",
+    "Definitely.",
+    "Probably.",
+    "Ask me again later.",
+    "I don't think so.",
+    "Absolutely."
+  ];
+
+  const answer = answers[Math.floor(Math.random() * answers.length)];
+
+  await respond({
+    text: `🎱 ${answer}`
+  });
+});
+
+app.command("/rayyans-slackbot-roll", async ({ ack, respond }) => {
+  console.log("ROLL received");
+
+  await ack();
+
+  const number = Math.floor(Math.random() * 100) + 1;
+
+  await respond({
+    text: `🎲 You rolled **${number}**!`
+  });
+});
+
 (async () => {
   await app.start();
   console.log("🤖 Rayyans-Slackbot is running!");
 })();
+```
