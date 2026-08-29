@@ -1,4 +1,3 @@
-```js
 require("dotenv").config();
 
 const { App } = require("@slack/bolt");
@@ -20,7 +19,7 @@ app.command("/rayyans-slackbot-ping", async ({ ack, respond }) => {
   const latency = Date.now() - start;
 
   await respond({
-    text: `Pong!\nLatency: ${latency}ms`
+    text: "Pong!\nLatency: " + latency + "ms"
   });
 });
 
@@ -31,13 +30,14 @@ app.command("/rayyans-slackbot-help", async ({ ack, respond }) => {
   console.log("HELP acknowledged");
 
   await respond({
-    text: `Available Commands:
-/rayyans-slackbot-ping - Check bot latency
-/rayyans-slackbot-catfact - Get a cat fact
-/rayyans-slackbot-joke - Get a random joke
-/rayyans-slackbot-coinflip - Flip a coin
-/rayyans-slackbot-8ball - Ask the magic 8-ball
-/rayyans-slackbot-roll - Roll a number from 1-100`
+    text:
+      "Available Commands:\n" +
+      "/rayyans-slackbot-ping - Check bot latency\n" +
+      "/rayyans-slackbot-catfact - Get a cat fact\n" +
+      "/rayyans-slackbot-joke - Get a random joke\n" +
+      "/rayyans-slackbot-coinflip - Flip a coin\n" +
+      "/rayyans-slackbot-8ball - Ask the magic 8-ball\n" +
+      "/rayyans-slackbot-roll - Roll a number from 1-100"
   });
 });
 
@@ -54,7 +54,7 @@ app.command("/rayyans-slackbot-catfact", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: `🐱 Cat Fact:\n${response.data.fact}`
+      text: "🐱 Cat Fact:\n" + response.data.fact
     });
 
     console.log("CATFACT response sent");
@@ -80,9 +80,7 @@ app.command("/rayyans-slackbot-joke", async ({ ack, respond }) => {
     );
 
     await respond({
-      text: `${response.data.setup}
-
-${response.data.punchline}`
+      text: response.data.setup + "\n\n" + response.data.punchline
     });
 
     console.log("JOKE response sent");
@@ -103,7 +101,7 @@ app.command("/rayyans-slackbot-coinflip", async ({ ack, respond }) => {
   const result = Math.random() < 0.5 ? "Heads" : "Tails";
 
   await respond({
-    text: `🪙 ${result}!`
+    text: "🪙 " + result + "!"
   });
 });
 
@@ -125,7 +123,7 @@ app.command("/rayyans-slackbot-8ball", async ({ ack, respond }) => {
   const answer = answers[Math.floor(Math.random() * answers.length)];
 
   await respond({
-    text: `🎱 ${answer}`
+    text: "🎱 " + answer
   });
 });
 
@@ -137,7 +135,7 @@ app.command("/rayyans-slackbot-roll", async ({ ack, respond }) => {
   const number = Math.floor(Math.random() * 100) + 1;
 
   await respond({
-    text: `🎲 You rolled **${number}**!`
+    text: "🎲 You rolled " + number + "!"
   });
 });
 
@@ -145,4 +143,3 @@ app.command("/rayyans-slackbot-roll", async ({ ack, respond }) => {
   await app.start();
   console.log("🤖 Rayyans-Slackbot is running!");
 })();
-```
