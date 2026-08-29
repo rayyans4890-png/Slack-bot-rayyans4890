@@ -31,8 +31,7 @@ app.command("/rayyans-slackbot-help", async ({ ack, respond }) => {
   console.log("HELP acknowledged");
 
   await respond({
-    text:
-`Available Commands:
+    text: `Available Commands:
 /rayyans-slackbot-ping - Check bot latency
 /rayyans-slackbot-catfact - Get a cat fact
 /rayyans-slackbot-joke - Get a random joke
@@ -81,8 +80,7 @@ app.command("/rayyans-slackbot-joke", async ({ ack, respond }) => {
     );
 
     await respond({
-      text:
-`${response.data.setup}
+      text: `${response.data.setup}
 
 ${response.data.punchline}`
     });
