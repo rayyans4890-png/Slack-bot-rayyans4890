@@ -16,9 +16,9 @@ I made my first ever Bot, I made it for slackbot.It provides you with usefull/fu
 
 ## Here are some demo pictures of it from Slack.
 
-1. `/rayyans-slackbot-help` <img width="587" height="258" alt="image" src="https://github.com/user-attachments/assets/f6497ee1-1416-4e68-bd24-e84ac9500a5e" />
+1. /rayyans-slackbot-help` <img width="587" height="258" alt="image" src="https://github.com/user-attachments/assets/f6497ee1-1416-4e68-bd24-e84ac9500a5e" />
 
-2. `/rayyans-slackbot-ping` <img width="437" height="132" alt="image" src="https://github.com/user-attachments/assets/6baa667c-2c95-4da4-b19b-cbbe61a76310" />
+2. /rayyans-slackbot-ping` <img width="437" height="132" alt="image" src="https://github.com/user-attachments/assets/6baa667c-2c95-4da4-b19b-cbbe61a76310" />
 
 3. /rayyans-slackbot-""""""" <img width="658" height="465" alt="image" src="https://github.com/user-attachments/assets/5e59398f-9431-492f-bc81-ddf303aba37c" />
 
